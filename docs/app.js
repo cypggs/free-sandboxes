@@ -237,6 +237,16 @@
     emptyState.hidden = hasResults;
   }
 
+  function updateDates() {
+    var updated = DATA.updated || "";
+    if (!updated) return;
+    var short = updated.slice(5).replace("-", ".");
+    var fulls = document.querySelectorAll('[data-updated="full"]');
+    for (var i = 0; i < fulls.length; i++) fulls[i].textContent = updated;
+    var shorts = document.querySelectorAll('[data-updated="short"]');
+    for (var j = 0; j < shorts.length; j++) shorts[j].textContent = short;
+  }
+
   function updateCounts() {
     var counts = {
       all: products.length,
@@ -419,6 +429,7 @@
     searchInput.focus();
   });
 
+  updateDates();
   updateCounts();
   render();
   syncThemeLabel();
