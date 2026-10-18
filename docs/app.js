@@ -204,6 +204,10 @@
           p.signup,
           p.bestFor,
           p.api,
+          p.session,
+          p.persistence,
+          p.speed,
+          (p.caveats || []).join(" "),
           CATEGORIES[p.category].label,
           FREE_TYPES[p.freeType].label,
           CARD[p.card].label
