@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#07090b">
+  <title>免费 Sandbox 清单 · Free Sandbox Index</title>
+  <meta name="description" content="11 个免费云端 Sandbox / VM 对比：机器配置、免费额度、注册门槛、闲置回收与隐藏坑点。涵盖 Instabox、Railway、Freestyle、E2B、Modal、Daytona、Vercel、Blaxel、GitHub Codespaces、Google Cloud Shell 和 Oracle Always Free。">
+  <meta property="og:title" content="免费 Sandbox 清单 · Free Sandbox Index">
+  <meta property="og:description" content="配置、额度、注册门槛、坑点，一页看完。给 AI Agent 和开发者的免费云沙箱指南。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cypggs.github.io/free-sandboxes/">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("sandbox-theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#list">跳到清单</a>
+
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Free Sandboxes 首页">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M7 5H4v22h3M25 5h3v22h-3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="16" cy="16" r="4.2" fill="currentColor"/>
+        </svg>
+        <span class="brand-text">FREE SANDBOXES</span>
+        <span class="brand-tag">INDEX</span>
+      </a>
+
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#list">清单</a>
+        <a href="#guide">怎么选</a>
+        <a href="#types">免费模式</a>
+        <a href="#pitfalls">避坑</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="icon-link" href="https://github.com/cypggs/free-sandboxes" target="_blank" rel="noopener" aria-label="GitHub 仓库">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" fill="currentColor"/></svg>
+        </a>
+        <button class="theme-btn" id="theme-toggle" type="button" aria-label="切换深浅色">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker"><span class="live-dot"></span> FREE SANDBOX INDEX <span class="kicker-slash">/</span> 2026</p>
+          <h1>免费沙箱，<br><span class="hl">一页看完。</span></h1>
+          <p class="lede">给 AI Agent 和开发者的免费云端沙箱清单。机器配置、免费额度、注册门槛、闲置回收和隐藏坑点，全部对着官方文档核实后列在这里。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#list">浏览 <span data-stat="total">11</span> 个产品 <span class="btn-arrow">↓</span></a>
+            <a class="btn btn-ghost" href="https://github.com/cypggs/free-sandboxes" target="_blank" rel="noopener">GitHub 仓库 <span class="btn-arrow">↗</span></a>
+          </div>
+          <dl class="stats">
+            <div><dt>产品</dt><dd data-stat="total">11</dd></div>
+            <div><dt>无需绑卡</dt><dd data-stat="no-card">8</dd></div>
+            <div><dt>免费模式</dt><dd data-stat="types">5</dd></div>
+            <div><dt>最近核实</dt><dd class="stat-date">10.18</dd></div>
+          </dl>
+        </div>
+
+        <div class="terminal" aria-label="免费沙箱清单摘要">
+          <div class="terminal-bar">
+            <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="term-title">free-sandbox — index</span>
+            <span class="term-badge">OFFICIAL DOCS</span>
+          </div>
+          <div class="terminal-body">
+            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">sandbox list</span> <span class="t-flag">--no-card</span> <span class="t-flag">--sort ease</span></div>
+            <div class="t-line"><span class="t-ok">✓</span> <span class="t-name">railway</span> <span class="t-spec">2C / 2G</span> <span class="t-note">ssh railway.new</span></div>
+            <div class="t-line"><span class="t-ok">✓</span> <span class="t-name">instabox</span> <span class="t-spec">4C / 8G</span> <span class="t-note">5 台 · invite</span></div>
+            <div class="t-line"><span class="t-ok">✓</span> <span class="t-name">freestyle</span> <span class="t-spec">4C / 8G</span> <span class="t-note">200 vCPU-h/mo</span></div>
+            <div class="t-line"><span class="t-ok">✓</span> <span class="t-name">codespaces</span> <span class="t-spec">2–32C</span> <span class="t-note">120 core-h/mo</span></div>
+            <div class="t-line"><span class="t-ok">✓</span> <span class="t-name">e2b</span> <span class="t-spec">2C / 4G</span> <span class="t-note">$100 credit</span></div>
+            <div class="t-line t-spacer"><span class="t-dim">8/11 no card</span><span class="t-sep">·</span><span class="t-dim">5 free types</span><span class="t-sep">·</span><span class="t-dim">verified 2026-10-18</span></div>
+            <div class="t-line"><span class="t-prompt">$</span> <span class="cursor" aria-hidden="true"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="list">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">01 / THE LIST</p>
+            <h2>把免费额度摊开看</h2>
+          </div>
+          <p class="section-sub">默认按推荐顺序。点开任意一行，查看启动速度、生命周期、持久化和坑点。评分是编辑判断，不是厂商数据。</p>
+        </div>
+
+        <div class="toolbar" id="toolbar">
+          <div class="toolbar-top">
+            <label class="search">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <input id="search" type="search" placeholder="搜索产品、场景或关键词…" autocomplete="off" aria-label="搜索免费沙箱">
+            </label>
+            <label class="sort">
+              <span>排序</span>
+              <select id="sort" aria-label="排序方式">
+                <option value="rank">推荐顺序</option>
+                <option value="free">免费力度</option>
+                <option value="ease">上手便捷</option>
+                <option value="name">名称 A–Z</option>
+              </select>
+            </label>
+          </div>
+          <div class="chips" role="group" aria-label="筛选免费沙箱">
+            <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">全部 <span class="chip-count" data-count="all">11</span></button>
+            <button class="chip" type="button" data-filter="no-card" aria-pressed="false">无需绑卡 <span class="chip-count" data-count="no-card">8</span></button>
+            <button class="chip" type="button" data-filter="no-signup" aria-pressed="false">免注册 <span class="chip-count" data-count="no-signup">1</span></button>
+            <button class="chip" type="button" data-filter="recurring" aria-pressed="false">长期免费 <span class="chip-count" data-count="recurring">6</span></button>
+            <button class="chip" type="button" data-filter="credit" aria-pressed="false">试用额度 <span class="chip-count" data-count="credit">3</span></button>
+            <button class="chip" type="button" data-filter="promo" aria-pressed="false">推广免费 <span class="chip-count" data-count="promo">1</span></button>
+            <button class="chip" type="button" data-filter="agent" aria-pressed="false">Agent 沙箱 <span class="chip-count" data-count="agent">8</span></button>
+            <button class="chip" type="button" data-filter="dev" aria-pressed="false">开发环境 <span class="chip-count" data-count="dev">2</span></button>
+            <button class="chip" type="button" data-filter="vm" aria-pressed="false">永久 VM <span class="chip-count" data-count="vm">1</span></button>
+          </div>
+        </div>
+
+        <div class="result-bar">
+          <span id="result-count" aria-live="polite">显示 11 / 11</span>
+          <span class="result-note">额度与价格以官方页面为准 · 核实于 2026-10-18</span>
+        </div>
+
+        <div class="table-shell" id="table-shell">
+          <table class="cmp-table" aria-label="免费沙箱对比表">
+            <colgroup>
+              <col class="col-product">
+              <col class="col-type">
+              <col class="col-quota">
+              <col class="col-specs">
+              <col class="col-signup">
+              <col class="col-score">
+              <col class="col-toggle">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">产品</th>
+                <th scope="col">免费模式</th>
+                <th scope="col">免费额度</th>
+                <th scope="col">单机配置</th>
+                <th scope="col">注册门槛</th>
+                <th scope="col">上手 / 免费</th>
+                <th scope="col"><span class="sr-only">展开详情</span></th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+
+        <div class="mobile-list" id="mobile-list"></div>
+        <div class="empty" id="empty" hidden>
+          <span class="empty-mark">∅</span>
+          <p>没有匹配的沙箱。换个关键词，或调整筛选条件。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="guide">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">02 / HOW TO PICK</p>
+            <h2>四个场景，直接抄作业</h2>
+          </div>
+          <p class="section-sub">不想研究细节？先按你的实际用途选，再去表里核对限制。</p>
+        </div>
+
+        <div class="guide-grid">
+          <article class="guide-card" style="--tone: var(--lime)">
+            <div class="guide-top"><span>01 / 最快上手</span><span class="guide-icon">↗</span></div>
+            <h3>Railway Free VM</h3>
+            <p>没有账号、没有信用卡，<code>ssh railway.new</code> 直接拿到 2C2G 的 VM。适合临时跑脚本和演示，24 小时内记得领取。</p>
+            <button class="text-link" type="button" data-focus="railway">在清单中查看 <span>→</span></button>
+          </article>
+          <article class="guide-card" style="--tone: var(--amber)">
+            <div class="guide-top"><span>02 / 配置最猛</span><span class="guide-icon">↗</span></div>
+            <h3>Instabox</h3>
+            <p>Beta 期 5 台 4C8G，root、Docker、快照全都有。需要邀请码，普通账号 30 分钟闲置就会暂停。</p>
+            <button class="text-link" type="button" data-focus="instabox">在清单中查看 <span>→</span></button>
+          </article>
+          <article class="guide-card" style="--tone: var(--mint)">
+            <div class="guide-top"><span>03 / 长期最稳</span><span class="guide-icon">↗</span></div>
+            <h3>Freestyle</h3>
+            <p>每月 200 vCPU 小时、10 台并发，额度重置而不是一次性。免费档用尽会暂停，不会偷偷扣费。</p>
+            <button class="text-link" type="button" data-focus="freestyle">在清单中查看 <span>→</span></button>
+          </article>
+          <article class="guide-card" style="--tone: var(--blue)">
+            <div class="guide-top"><span>04 / 完整开发环境</span><span class="guide-icon">↗</span></div>
+            <h3>GitHub Codespaces</h3>
+            <p>120 core-hours/月，浏览器里开 VS Code。适合写代码、调试、跑测试，不适合长期挂 Agent。</p>
+            <button class="text-link" type="button" data-focus="codespaces">在清单中查看 <span>→</span></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="types">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">03 / FREE TYPES</p>
+            <h2>先分清“免费”是哪一种</h2>
+          </div>
+          <p class="section-sub">一次性额度和每月重置完全是两回事；免注册试用和永久免费也差得很远。</p>
+        </div>
+
+        <div class="type-grid">
+          <article class="type-card" style="--tone: var(--mint)">
+            <div class="type-top"><span class="type-count" data-type-count="recurring">5</span><span class="type-label">RECURRING</span></div>
+            <h3>周期性免费</h3>
+            <p>每月或每周重置固定额度，最适合长期使用。注意通常是硬上限，用完会暂停而不是自动扣费。</p>
+            <p class="type-ex">Freestyle · Modal · Vercel · Codespaces · Cloud Shell</p>
+          </article>
+          <article class="type-card" style="--tone: var(--blue)">
+            <div class="type-top"><span class="type-count" data-type-count="credit">3</span><span class="type-label">ONE-TIME</span></div>
+            <h3>一次性试用额度</h3>
+            <p>注册送固定金额或时长，用完即止。适合短期评测、压测或验证想法，不适合长期挂机。</p>
+            <p class="type-ex">E2B · Daytona · Blaxel</p>
+          </article>
+          <article class="type-card" style="--tone: var(--lime)">
+            <div class="type-top"><span class="type-count" data-type-count="promo">1</span><span class="type-label">BETA</span></div>
+            <h3>推广期免费</h3>
+            <p>Beta、内测或拉新期免费，额度往往最猛，但价格和规则随时会变。适合尝鲜，别押生产。</p>
+            <p class="type-ex">Instabox</p>
+          </article>
+          <article class="type-card" style="--tone: var(--amber)">
+            <div class="type-top"><span class="type-count" data-type-count="anonymous">1</span><span class="type-label">NO SIGNUP</span></div>
+            <h3>免注册试用</h3>
+            <p>不用账号、不用信用卡，直接拿一台临时 VM。适合快速验证，注意保留期限和领取规则。</p>
+            <p class="type-ex">Railway Free VM</p>
+          </article>
+          <article class="type-card" style="--tone: var(--coral)">
+            <div class="type-top"><span class="type-count" data-type-count="always">1</span><span class="type-label">ALWAYS FREE</span></div>
+            <h3>永久免费</h3>
+            <p>Always Free 资源，不设到期日。通常需要绑卡验证，而且热门区域容量紧张，创建失败很常见。</p>
+            <p class="type-ex">Oracle Cloud Always Free</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pitfalls">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">04 / PITFALLS</p>
+            <h2>免费的最贵？先看这几条</h2>
+          </div>
+          <p class="section-sub">这些是免费沙箱最容易踩的坑，比机器参数更影响实际体验。</p>
+        </div>
+
+        <div class="pitfall-grid">
+          <article class="pitfall">
+            <span class="pitfall-num">01</span>
+            <div><h3>一次性额度会过期</h3><p>E2B、Daytona、Blaxel 的额度不是每月重置。跑长任务前先算清每小时成本，别把试用额度当成长期资源。</p></div>
+          </article>
+          <article class="pitfall">
+            <span class="pitfall-num">02</span>
+            <div><h3>免费档往往是硬上限</h3><p>Freestyle 额度用完直接暂停，Vercel 超额暂停到下月。不会悄悄扣费，但会中断正在跑的任务。</p></div>
+          </article>
+          <article class="pitfall">
+            <span class="pitfall-num">03</span>
+            <div><h3>绑卡不等于扣费，但可能预授权</h3><p>Oracle 必须绑卡验证；Freestyle 加卡触发 $1 验证；Modal 的 $30 档社区反馈需绑卡。用虚拟卡前先确认支持预授权。</p></div>
+          </article>
+          <article class="pitfall">
+            <span class="pitfall-num">04</span>
+            <div><h3>闲置回收比你想的快</h3><p>Instabox 30 分钟、Cloud Shell 40 分钟、Codespaces 默认 30 分钟、Oracle 7 天低负载可能回收。长任务记得保活。</p></div>
+          </article>
+          <article class="pitfall">
+            <span class="pitfall-num">05</span>
+            <div><h3>容量和区域是隐形门槛</h3><p>Oracle ARM 经常无货；Railway 每 IP 每天 3 台；Vercel 只有部分区域。能不能创建成功，有时比配置更重要。</p></div>
+          </article>
+          <article class="pitfall">
+            <span class="pitfall-num">06</span>
+            <div><h3>Beta 价格随时会变</h3><p>Instabox 官方原话是 “Free until we figure it out”。任何免费额度都以官方当天页面为准，这个仓库只是帮你少走弯路。</p></div>
+          </article>
+        </div>
+
+        <div class="callout">
+          <span class="callout-mark">!</span>
+          <p><strong>免费不等于无限制。</strong> 所有免费沙箱都没有生产级 SLA，可能随时回收、限流或改价。重要数据请定期备份，不要把唯一的副本放在免费机器上。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 5H4v22h3M25 5h3v22h-3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="16" r="4.2" fill="currentColor"/></svg>
+        <span>FREE SANDBOX INDEX</span>
+      </div>
+      <p class="footer-note">数据核实于 2026-10-18 · 免费政策变化很快，使用前请以官方页面为准。</p>
+      <div class="footer-links">
+        <a href="https://github.com/cypggs/free-sandboxes" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/cypggs/free-sandboxes/issues" target="_blank" rel="noopener">纠错 / 提 Issue</a>
+        <a href="https://github.com/cypggs/free-sandboxes/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>
+      </div>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="noscript">这个页面需要 JavaScript 才能筛选和展开详情；README 中有完整的对比表格。</div>
+  </noscript>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+name: 推荐免费 Sandbox
+description: 提交新的免费沙箱 / VM，或报告现有额度变化
+title: "[Sandbox] "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢补充！请尽量附上官方链接和核实日期。推广软文、邀请返利链接不会被采纳。
+  - type: input
+    id: name
+    attributes:
+      label: 产品名称
+      placeholder: Example Sandbox
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: 官方链接
+      description: 官网 / 文档 / 定价页，至少一个
+      placeholder: https://example.com/pricing
+    validations:
+      required: true
+  - type: textarea
+    id: free
+    attributes:
+      label: 免费额度
+      description: 是一次性还是每月重置？具体额度、并发、时长是多少？
+      placeholder: 每月 100 vCPU 小时，2 台并发，单会话 1 小时……
+    validations:
+      required: true
+  - type: input
+    id: specs
+    attributes:
+      label: 单机配置
+      placeholder: vCPU / RAM / 磁盘 / 最大规格
+    validations:
+      required: false
+  - type: input
+    id: signup
+    attributes:
+      label: 注册门槛
+      description: 邮箱 / GitHub / 邀请码 / 信用卡？是否需要排队？
+      placeholder: GitHub 登录，无需信用卡
+    validations:
+      required: true
+  - type: textarea
+    id: caveats
+    attributes:
+      label: 坑点 / 限制
+      description: 闲置回收、会话上限、容量限制、绑卡验证、价格可能变化等
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 我已查看官方页面，以上信息不是来自推广软文
+          required: true
+        - label: 这不是 affiliate / 邀请返利链接
+          required: true
