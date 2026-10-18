@@ -386,12 +386,16 @@
   }
 
   var themeButton = document.getElementById("theme-toggle");
+  var themeColorMeta = document.querySelector('meta[name="theme-color"]');
   function syncThemeLabel() {
     var root = document.documentElement;
     var explicit = root.getAttribute("data-theme");
     var isLight = explicit === "light" ||
       (!explicit && window.matchMedia("(prefers-color-scheme: light)").matches);
     themeButton.setAttribute("aria-label", isLight ? "切换到深色" : "切换到浅色");
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute("content", isLight ? "#f3f1e9" : "#07090b");
+    }
   }
 
   themeButton.addEventListener("click", function () {
