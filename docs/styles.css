@@ -100,6 +100,7 @@ body::before {
     linear-gradient(to right, var(--line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--line) 1px, transparent 1px);
   background-size: 80px 80px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 62%);
   mask-image: linear-gradient(to bottom, #000 0%, transparent 62%);
   opacity: 0.4;
 }
@@ -1501,6 +1502,8 @@ code {
 @media (max-width: 820px) {
   .nav-links { display: none; }
   .nav-inner { gap: 16px; }
+
+  .toolbar { position: static; }
 
   .hero { padding: 64px 0 56px; }
 
